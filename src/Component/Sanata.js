@@ -57,6 +57,7 @@ export default function Sanata(props) {
           <button disabled={text.length===0} className='btn btn-primary mx-2 ' onClick={handleClearText}>Clear Text</button>
         </div>
       </div>
+      
       <div className="container" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
         <h2> <b>Your Text Summary </b>  </h2>
         <p> number of Word in textarea is {text.split(/\s+/).filter((element)=>{return element.length!==0}).length} Word </p>

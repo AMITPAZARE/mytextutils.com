@@ -21,7 +21,7 @@ export default function Navbar(props) {
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="#">{props.home}</a>
             </li>
-
+ 
             {/* Navbar 2 btn  */}
             <li class="nav-item">
           <Link class="nav-link " aria-current="page" to="/mytextutils.com">Home</Link>
