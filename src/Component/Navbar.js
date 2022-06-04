@@ -4,10 +4,7 @@ import { Link } from 'react-router-dom'
 
 export default function Navbar(props) {
   
-  const redBtn= ()=>{
-    document.body.style.backgroundColor = 'red'
-  }
-  
+ 
     
   
   return (
@@ -26,20 +23,19 @@ export default function Navbar(props) {
             </li>
 
             {/* Navbar 2 btn  */}
+            <li class="nav-item">
+          <Link class="nav-link " aria-current="page" to="/mytextutils.com">Home</Link>
+        </li>
+        <li class="nav-item">
+          <Link class="nav-link" to="/About">About</Link>
+        </li>
 
-            <li className="nav-item dropdown">
-              <Link className="nav-link" to="/" role="button" > Home </Link>
-            </li>
-             
-            <li className="nav-item">
-              <Link className="nav-link" to="/About">About</Link>
-            </li>
             <li className="nav-item">
               <a className="nav-link disabled" ></a>
             </li>
           </ul>
           
-          <button type="button" onClick={redBtn} className="btn btn-danger mx-3">Red Theme</button>
+           
           
           
           <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}>

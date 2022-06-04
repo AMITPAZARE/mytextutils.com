@@ -53,7 +53,7 @@ function App() {
       <div>
       <Routes>
       <Route exact path="/About" element={<About mode={mode}/>} />
-      <Route exact path="/" element={<Sanata heding="Enter the text to analyze below" mode={mode} showAlert={showAlert} />} />  
+      <Route exact path="/mytextutils.com" element={<Sanata heding="Enter the text to analyze below" mode={mode} showAlert={showAlert} />} />  
       </Routes>
       </div>
     </Router>

@@ -27,10 +27,13 @@ export default function Sanata(props) {
     props.showAlert("Extra spaces remove", "success")
   }
   const handleCopy = () => {
-    let newText = document.getElementById('box');
-    newText.select();
-    navigator.clipboard.writeText(newText.value)
+     
+    navigator.clipboard.writeText(text)
     props.showAlert("Copy to clipbord", "success")
+  }
+  const handleClearText = () => {
+    setText(" ");
+    props.showAlert("Clear Text ", "success")
   }
 
   const [text, setText] = useState("");
@@ -51,11 +54,12 @@ export default function Sanata(props) {
           <button disabled={text.length===0} className='btn btn-primary mx-2 ' onClick={handleLoClick}> Convert to lovercase</button>
           <button disabled={text.length===0} className='btn btn-primary mx-2 ' onClick={handleCopy}> Copy Text</button>
           <button disabled={text.length===0} className='btn btn-primary mx-2 ' onClick={handleRemoveExtraSpaces}> removeExtraSpeces</button>
+          <button disabled={text.length===0} className='btn btn-primary mx-2 ' onClick={handleClearText}>Clear Text</button>
         </div>
       </div>
       <div className="container" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
         <h2> <b>Your Text Summary </b>  </h2>
-        <p> number of Word in textarea is {text.split(" ").filter((element)=>{return element.length!==0}).length} Word </p>
+        <p> number of Word in textarea is {text.split(/\s+/).filter((element)=>{return element.length!==0}).length} Word </p>
         <p> {0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} Minute read</p>
         <p> number of Carector in textarea is {text.length} Carector</p>
       </div>
